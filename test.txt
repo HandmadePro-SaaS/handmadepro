@@ -1,1 +1,0 @@
-Installation de vite, svelte, svelte kit, tailwind
