@@ -1,12 +1,28 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+  import i18n from '$lib/i18n';
+  import { page } from '$app/stores';
+  import { setContext } from 'svelte';
+  import "../../app.css";
 
-	let { children } = $props();
-	import "../app.css";
+  let { children } = $props();
+
+  let ready = $state(false);
+  let lang = $derived($page.params.lang);
+
+  $effect(() => {
+    i18n.changeLanguage(lang).then(() => {
+      ready = true;
+    });
+  });
+
+  let t = $derived((key: string) => i18n.t(key));
+  setContext('t', () => t);
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<p>ready: {ready} | lang: {lang}</p>
 
-{@render children()}
+{#if ready}
+  {@render children()}
+{:else}
+  <p>Chargement...</p>
+{/if}
