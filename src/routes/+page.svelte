@@ -1,5 +1,9 @@
-<h1>Welcome to SvelteKit</h1>
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import Footer from "../lib/components/footer.svelte";
+</script>
+
+<div class="min-h-screen">
+  <h1>Welcome to HandMadePro</h1>
+</div>
+
+<Footer />
