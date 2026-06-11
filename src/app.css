@@ -127,3 +127,11 @@
 		@apply font-sans;
 	}
 }
+ 
+
+@theme {
+	--color-ux1: #FADCDC;
+	--color-ux2: #FAB9B9;
+	--color-ux3: #FA7D7D;
+	--color-ux4: #FA3C3C;
+}
